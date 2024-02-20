@@ -1,20 +1,22 @@
 #!/bin/bash
 
-# Clone Celestia Node repository
-#cd $HOME || exit
-sudo yum install git -y
-rm -rf celestia-node
-git clone https://github.com/celestiaorg/celestia-node.git
-cd celestia-node/ || exit
+# Update system packages
+sudo yum update -y
 
-# Checkout specific version tag
-git checkout tags/v0.12.4
+# Install necessary packages
+sudo yum install curl tar wget aria2 clang pkg-config openssl-devel jq make ncdu git -y
 
-# Build Celestia Node with jemalloc
-make build-jemalloc
-make install
-make cel-key
+# Download and install Go
+ver="1.21.1"
+cd $HOME || exit
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
 
-# Verify Celestia Node installation
-celestia version
+# Add Go binary path to environment variables
+echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $HOME/.bash_profile
+source $HOME/.bash_profile
 
+# Verify Go installation
+go version
