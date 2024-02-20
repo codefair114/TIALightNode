@@ -1,4 +1,4 @@
-# Celestia Node Deployment
+# Celestia DA Light Node Deployment
 
 This project provides scripts for deploying a Celestia Light Node on an AWS Linux instance. Celestia is a decentralized network for blockchain interoperability, enabling users to connect to various blockchains and access their functionalities through a unified interface.
 
