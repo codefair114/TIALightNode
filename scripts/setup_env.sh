@@ -4,7 +4,7 @@
 #cd $HOME || exit
 sudo yum install git -y
 rm -rf celestia-node
-git clone https://github.com/celestiaorg/celestia-node.git .
+git clone https://github.com/celestiaorg/celestia-node.git
 cd celestia-node/ || exit
 
 # Checkout specific version tag
