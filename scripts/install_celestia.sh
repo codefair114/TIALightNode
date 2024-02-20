@@ -11,7 +11,7 @@ cd celestia-node/ || exit
 git checkout tags/v0.12.4
 
 # Build Celestia Node with jemalloc
-make build-jemalloc
+make build
 make install
 make cel-key
 
