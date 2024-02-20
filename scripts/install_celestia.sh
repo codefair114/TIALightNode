@@ -17,4 +17,3 @@ make cel-key
 
 # Verify Celestia Node installation
 celestia version
-
