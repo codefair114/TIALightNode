@@ -4,6 +4,8 @@
 echo "Setting up environment..."
 source scripts/setup_env.sh
 
+cd TIALightNode
+
 # Run install_celestia.sh to install Celestia Node
 echo "Installing Celestia Node..."
 source scripts/install_celestia.sh
